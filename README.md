@@ -4,6 +4,8 @@ Inspired by latest works in simulation using LLMs, this is a small script that s
 
 Sounds like a cool idea, but it's still too simple and crude. Partly because the limitation of my knowledge, other partly because llama3.1 is not as smart as I thought.
 
+It is used in the Economics Course (走进经济学) at Ocean University of China for the final assignment of Fall 2024.
+
 # Run
 
 Install Ollama using one command:
