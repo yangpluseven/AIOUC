@@ -193,9 +193,13 @@ def main(display_setup=False):
                         + " for major "
                         + str(major.id)
                     )
-                    allocation = random_allocation(len(sorted_courses), major.total_coins)
+                    allocation = random_allocation(
+                        len(sorted_courses), major.total_coins
+                    )
 
-                if sum(allocation) != major.total_coins:
+                if sum(allocation) != major.total_coins or len(allocation) != len(
+                    sorted_courses
+                ):
                     for i in range(len(allocation)):
                         allocation[i] = int(
                             major.total_coins * allocation[i] / sum(allocation)
@@ -232,7 +236,9 @@ def main(display_setup=False):
                     f.write(response)
                     f.write("\n## Courses:\n")
                     for course in sorted_courses:
-                        f.write(str(course) + ", minimum coins to enroll if ended now: ")
+                        f.write(
+                            str(course) + ", minimum coins to enroll if ended now: "
+                        )
                         f.write(str(course.minimum_coins_to_enroll()) + "\n")
 
 
